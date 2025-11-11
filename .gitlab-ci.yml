@@ -11,4 +11,5 @@ deploy DEV:
     - aws --version
     - echo "Extracting the production build"
     - echo "Uploading files to AWS Bucket"
-    - aws s3 cp --recursive . s3://$NOMBRE_S3
+    - aws s3 cp --recursive . s3://$NAME_S3
+
