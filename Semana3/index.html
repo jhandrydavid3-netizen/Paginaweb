@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi perfil</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="./static/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Video de fondo -->
+    <video class="video-background" autoplay muted loop playsinline preload="auto">
+        <source src="./static/video-fondo.mp4" type="video/mp4">
+        Tu navegador no soporta el video.
+    </video>
+
+    <!-- Overlay oscuro -->
+    <div class="overlay"></div>
+
+    <!-- Contenido -->
+    <div class="content">
+        <h1>Programador FULL STACK</h1>
+        
+        <!-- Sección de Perfil -->
+        <div class="profile-section">
+            <div class="profile-image">
+                <!-- AQUÍ VA TU FOTO - Pon tu imagen en la carpeta static y cambia el nombre -->
+                <img src="./static/mi-foto.png " alt="Mi foto de perfil">
+            </div>
+            
+            <div class="profile-info">
+                <h2>Sobre mí</h2>
+                <p>
+                    Soy un desarrollador Full Stack apasionado por crear soluciones web y móviles innovadoras. 
+                    Me especializo en el desarrollo de aplicaciones modernas y funcionales que satisfacen las 
+                    necesidades de los usuarios.
+                </p>
+            </div>
+        </div>
+
+        <!-- Información Personal -->
+        <div class="info-section">
+            <h2>Información Personal</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <strong>Nombre:</strong>
+                    <p>JHANDRY DAVID BECERRA LIMA</p>
+                </div>
+                <div class="info-item">
+                    <strong>Email:</strong>
+                    <p>jhandrydavid3@gmail.com</p>
+                </div>
+                <div class="info-item">
+                    <strong>Ubicación:</strong>
+                    <p>Loja, Ecuador</p>
+                </div>
+                <div class="info-item">
+                    <strong>Teléfono:</strong>
+                    <p>0967662827</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Servicios -->
+        <h2 class="section-title">Servicios web y mobile</h2>
+        <div class="containerRed">
+            <h2>Servicios Disponibles</h2>
+        </div>
+        <div class="containerRed">
+            <h3 id="subtitle">Desarrollo de landing Page</h3>
+        </div>
+</body>
+</html>

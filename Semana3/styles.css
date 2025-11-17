@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Momo Trust Display", sans-serif;
+    min-height: 100vh;
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    object-fit: cover;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65);
+    z-index: -1;
+}
+
+.content {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    padding-top: 30px;
+}
+
+h2 {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.profile-section {
+    display: flex;
+    gap: 30px;
+    background-color: rgba(50, 50, 50, 0.7);
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+
+.profile-image img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 5px solid white;
+    object-fit: cover;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-info h2 {
+    font-size: 1.8rem;
+}
+
+.profile-info p {
+    color: white;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+.info-section {
+    background-color: rgba(50, 50, 50, 0.7);
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.info-item {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.info-item strong {
+    color: #ff4444;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.info-item p {
+    color: white;
+}
+
+.section-title {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.containerRed {
+    background-color: red;
+    padding: 10px;
+    border-radius: 12px;
+    margin: 10px 0px;
+}
+
+.containerRed h2 {
+    color: white;
+    text-align: center;
+}
+
+#subtitle {
+    color: white;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .profile-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .profile-image img {
+        width: 150px;
+        height: 150px;
+    }
+}
