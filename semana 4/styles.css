@@ -1,0 +1,52 @@
+:root{
+    --primary-color:#503dc9;
+    --primary-color-degre: #a299e6;
+    --secondary-color:#ff6123;  
+}
+
+body {
+    font-family: "Quicksand", sans-serif;   
+}
+.seccione{
+    background-color: var(--primary-color);
+    height: 40rem;
+    display: grid;
+}
+.titlePage{
+    color: white;
+    font-weight: 600;
+    margin-left: 25%;
+    margin-top: 3vw;
+}
+
+.containerOne{
+    width: 50%;
+}
+.containerOne img{
+    height: 36vw;
+    margin-left: 50%;
+}
+.containerTwo{
+    width: 34%;
+}
+
+.containerTwo h2{
+    color: var(--primary-color-degre);
+    font-weight: 700;
+    transform: scaleY(1.5);
+}
+.containerTwo .description{
+    color: white;
+    font-size: 3vm;
+}
+.containerTwo button{
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 1vw 0vw;
+    border-style: solid;
+    border-width: 0vw;
+    border-radius: 0.5vw;
+    font-size: 1,2vw;
+
+
+}
