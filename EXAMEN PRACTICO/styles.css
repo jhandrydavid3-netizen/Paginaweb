@@ -1,0 +1,82 @@
+/* ... (mantén todo lo que tenías antes) ... */
+
+/* Fondo con gradiente azul */
+body {
+  background: linear-gradient(135deg, #1e88e5, #0d47a1);
+  color: #333;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Contenedor principal */
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Títulos */
+h1 {
+  text-align: center;
+  color: #1e88e5;  /* Azul */
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #e0e0e0;
+  font-size: 28px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+h2 {
+  color: #333;
+  margin: 20px 0 15px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Formulario */
+#studentForm {
+  background: #f5f9ff;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #bbdefb;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 8px rgba(30, 136, 229, 0.1);
+}
+
+/* ... (el resto de tu CSS) ... */
+
+/* Botones principales */
+#submitBtn, .search-container button {
+  background-color: #ff9800;  /* Naranja */
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Encabezados de tabla */
+th {
+  background-color: #1e88e5;  /* Azul */
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+/* Botones de acción */
+.edit-btn {
+  background-color: #2196f3;  /* Azul claro */
+  color: white;
+  font-weight: 500;
+}
+
+.delete-btn {
+  background-color: #f44336;  /* Rojo */
+  color: white;
+  font-weight: 500;
+}
