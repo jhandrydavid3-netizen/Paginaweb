@@ -12,9 +12,11 @@ body {
 }
 
 .search-container {
+  
   text-align: center;
   margin-bottom: 20px;
   padding-top: 10px;
+  display:flex;
 }
 
 .search-container input {
@@ -28,7 +30,7 @@ body {
 .search-container button {
   margin-left: 10px;
   padding: 10px 25px;
-  background: #fbbf24;
+  background: #ba1818;
   border: none;
   border-radius: 5px;
   font-weight: bold;

@@ -82,7 +82,7 @@ const buscarUsuario = () => {
         <td>${index + 1}</td>
         <td>${usuario.codigo}</td>
         <td>${usuario.nombre}</td>
-        <td>${usuario.correo}</td>
+        <td> <button class="btn-correo">${usuario.correo}</button></td>
         <td>${usuario.telefono}</td>
         <td>
           <button class="btn-modificar" onclick="editarUsuario(${index})">Modificar</button>

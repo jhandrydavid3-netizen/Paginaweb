@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EXANEN FINALIZADO</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <div class="search-area">
+    <button onclick="buscarEstudiante()" class="btn-yellow">Buscar</button>
+    <input type="text" id="buscar" placeholder="🔍 Ingresar nombre o apellido">
+  </div>
+
+  <div class="main-box">
+
+    <div class="top-blue">
+      <h1>LISTAR ESTUDIANTES</h1>
+      <button class="btn-yellow small" onclick="toggleFormulario()">Agregar</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Nro</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Materia</th>
+          <th>Nota</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody id="tabla-estudiantes"></tbody>
+    </table>
+  </div>
+
+  <div id="formulario" class="form-box">
+    <h2>Nuevo Estudiante</h2>
+
+    <input id="nombre" type="text" placeholder="Nombre">
+    <input id="apellido" type="text" placeholder="Apellido">
+    <input id="materia" type="text" placeholder="Materia">
+    <button><input id="nota" type="number" placeholder="Nota"></button><input id="nota" type="number" placeholder="Nota">
+
+    <div class="form-buttons">
+      <button onclick="toggleFormulario()">Cancelar</button>
+      <button onclick="guardarEstudiante()" class="btn-yellow">Registrar</button>
+    </div>
+  </div>
+
+  <script src="examples.js"></script>
+</body>
+</html>

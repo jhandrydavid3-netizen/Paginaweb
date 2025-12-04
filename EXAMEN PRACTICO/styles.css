@@ -1,82 +1,139 @@
-/* ... (mantén todo lo que tenías antes) ... */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-/* Fondo con gradiente azul */
 body {
-  background: linear-gradient(135deg, #1e88e5, #0d47a1);
-  color: #333;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #4a90e2, #2563eb);
   min-height: 100vh;
   padding: 20px;
 }
-
-/* Contenedor principal */
-.container {
-  max-width: 1200px;
-  margin: 20px auto;
-  background: #ffffff;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Títulos */
-h1 {
+.search-container {
   text-align: center;
-  color: #1e88e5;  /* Azul */
-  margin-bottom: 25px;
-  padding-bottom: 15px;
-  border-bottom: 2px solid #e0e0e0;
-  font-size: 28px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  margin-bottom: 20px;
+  padding-top: 10px;
 }
 
-h2 {
-  color: #333;
-  margin: 20px 0 15px;
-  font-size: 20px;
-  font-weight: 600;
-}
-
-/* Formulario */
-#studentForm {
-  background: #f5f9ff;
-  padding: 25px;
-  border-radius: 8px;
-  border: 1px solid #bbdefb;
-  margin-bottom: 25px;
-  box-shadow: 0 2px 8px rgba(30, 136, 229, 0.1);
-}
-
-/* ... (el resto de tu CSS) ... */
-
-/* Botones principales */
-#submitBtn, .search-container button {
-  background-color: #ff9800;  /* Naranja */
-  color: white;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-/* Encabezados de tabla */
-th {
-  background-color: #1e88e5;  /* Azul */
-  color: white;
-  font-weight: 600;
-  text-transform: uppercase;
+.search-container input {
+  padding: 10px 15px;
+  width: 350px;
+  border: none;
   font-size: 14px;
-  letter-spacing: 0.5px;
 }
 
-/* Botones de acción */
-.edit-btn {
-  background-color: #2196f3;  /* Azul claro */
-  color: white;
-  font-weight: 500;
+.search-container button {
+  margin-left: 10px;
+  padding: 10px 25px;
+  background: #fbbf24;
+  border: none;
+  cursor: pointer;
+  font-weight: normal;
 }
 
-.delete-btn {
-  background-color: #f44336;  /* Rojo */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+h1 {
+  color: #1e3a8a;
+  font-size: 24px;
+  font-weight: normal;
+  letter-spacing: 2px;
+}
+
+.btn-agregar {
+  padding: 8px 20px;
+  background: #fbbf24;
+  border: none;
+  cursor: pointer;
+  font-weight: normal;
+}
+
+.form-container {
+  background: #f0f8ff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #93c5fd;
+}
+
+.form-container h2 {
+  color: #333;
+  font-size: 18px;
+  font-weight: normal;
+  margin-bottom: 15px;
+}
+
+form {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.btn-guardar {
+  padding: 10px;
+  background: #fbbf24;
+  color: #1e3a8a;
+  border: none;
+  cursor: pointer;
+  font-weight: normal;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+thead tr {
+  background: #60a5fa;
+}
+
+th {
+  padding: 12px;
+  text-align: left;
   color: white;
-  font-weight: 500;
+  font-weight: normal;
+  font-size: 13px;
+}
+
+tbody tr {
+  border-bottom: 1px solid #93c5fd;
+}
+
+tbody tr:nth-child(odd) {
+  background: #e0f2fe;
+}
+
+tbody tr:nth-child(even) {
+  background: #bae6fd;
+}
+
+td {
+  padding: 12px;
+}
+
+.btn-modificar, .btn-eliminar {
+  padding: 6px 15px;
+  background: #fbbf24;
+  border: none;
+  cursor: pointer;
+  font-weight: normal;
+  margin-right: 8px;
 }

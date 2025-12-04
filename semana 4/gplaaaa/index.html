@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación S4 - Landing Page INVERSA</title>
+    <!-- CSS desde AWS S3 -->
+    <link rel="stylesheet" href="https://jhandryevaluacionreversa.s3.us-east-2.amazonaws.com/styles.css">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <h1>Mi Empresa</h1>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#video">Video</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sección Hero -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h2>Bienvenido a Nuestra Empresa</h2>
+            <p>Soluciones innovadoras para tu negocio</p>
+            <!-- Imagen desde AWS S3 -->
+            <img src="https://jhandryevaluacionreversa.s3.us-east-2.amazonaws.com/Gato_JPEG_Sin_Texto.png" 
+                 alt="Imagen destacada" 
+                 class="hero-image">
+        </div>
+    </section>
+
+    <!-- Sección Servicios -->
+    <section id="servicios" class="servicios">
+        <h2>Nuestros Servicios</h2>
+        <div class="servicios-container">
+            <div class="servicio-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/2821/2821583.png" alt="Servicio 1">
+                <h3>Desarrollo Web</h3>
+                <p>Creamos sitios web modernos, rápidos y totalmente responsivos adaptados a tus necesidades.</p>
+            </div>
+            <div class="servicio-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/4727/4727266.png" alt="Servicio 2">
+                <h3>Cloud Computing</h3>
+                <p>Implementamos soluciones en la nube con AWS y Azure para escalar tu infraestructura.</p>
+            </div>
+            <div class="servicio-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/3281/3281307.png" alt="Servicio 3">
+                <h3>Consultoría IT</h3>
+                <p>Asesoramiento experto para optimizar tus procesos tecnológicos y mejorar tu eficiencia.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Video -->
+    <section id="video" class="video-section">
+        <h2>Conoce Más Sobre Nosotros</h2>
+        <div class="video-container">
+            <!-- Video desde AWS S3 -->
+            <video controls>
+                <source src="https://jhandryevaluacionreversa.s3.us-east-2.amazonaws.com/Gato+de+Siberia+-+gatito+bebe+llamando+a+su+mam%C3%A1.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contacto" class="contacto">
+        <h2>¿Listo para empezar?</h2>
+        <p>Contáctanos hoy y transforma tu negocio</p>
+        <button class="btn-contacto">Contáctanos Ahora</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Mi Empresa - Todos los derechos reservados</p>
+        <p>Evaluación S4 - Arquitectura Multi-Cloud INVERSA</p>
+        <p>HTML en Azure Blob Storage | CSS y Recursos en AWS S3</p>
+    </footer>
+</body>
+</html>

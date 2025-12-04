@@ -1,0 +1,79 @@
+*{
+  margin:0;padding:0;box-sizing:border-box;
+  font-family:Arial;border-radius:0!important;
+  font-weight:400;   
+}
+body{background:linear-gradient(#d9ecff,#c6e0fe);}
+
+/* --- BARRA DE BUSQUEDA --- */
+.search-area{
+  width:95%;margin:20px auto 0;
+  display:flex;justify-content:flex-end;gap:10px;
+}
+.search-area input{
+  width:350px;padding:10px;background:white;border:none;
+  font-weight:300;  
+}
+
+.btn-yellow{
+  background:#f9c200;padding:10px 20px;border:none;
+  cursor:pointer;font-weight:400; 
+}
+.btn-yellow.small{padding:8px 15px;}
+
+/* --- CUADRO PRINCIPAL --- */
+.main-box{
+  width:90%;margin:20px auto;background:rgb(255, 255, 255);
+  padding-bottom:20px;
+}
+
+/* --- FRANJA AZUL --- */
+.top-blue{
+  background:#3c71a2;padding:10px 20px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.top-blue h1{
+  color:white;font-size:18px;font-weight:400;
+}
+
+/* --- TABLA --- */
+table{
+  width:100%;border-collapse:collapse;margin-top:5px;
+  font-size:13px;font-weight:300; 
+}
+thead{
+  background:#4a80b2;color:white;font-weight:400;
+}
+th,td{
+  padding:10px;text-align:center;border-bottom:1px solid #dcdcdc;
+  font-weight:300; 
+}
+.btn-modificar,.btn-eliminar{
+  background:#f9c200;padding:6px 12px;border:none;
+  cursor:pointer;font-weight:400; 
+}
+
+/* --- FORMULARIO  --- */
+.form-box{
+  width:50%;margin:25px auto;background:#e8f2ff;
+  padding:20px;display:none;font-weight:300;
+}
+.form-box h2{
+  text-align:center;margin-bottom:15px;font-size:17px;
+  font-weight:400; 
+}
+.form-box input{
+  width:100%;padding:10px;margin:6px 0;background:white;border:none;
+  font-weight:300;  
+}
+.form-buttons{
+  text-align:center;margin-top:10px;
+}
+.form-buttons button{
+  padding:8px 20px;margin:0 10px;border:none;
+  cursor:pointer;font-weight:400; 
+}
+.form-buttons .btn-yellow{
+  background:#f9c200;
+}
+    
