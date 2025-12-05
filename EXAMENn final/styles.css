@@ -6,7 +6,7 @@
 
 body {
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #4a90e2, #2563eb);
+  background: linear-gradient(135deg, #4873a3, #cfdbf7);
   min-height: 100vh;
   padding: 20px;
 }
@@ -30,7 +30,7 @@ body {
 .search-container button {
   margin-left: 10px;
   padding: 10px 25px;
-  background: #ba1818;
+  background: #fbbf24;
   border: none;
   border-radius: 5px;
   font-weight: bold;
@@ -96,7 +96,7 @@ input {
 
 .btn-guardar {
   padding: 10px;
-  background: #fbbf24;
+  background: #9f833d;
   color: #1e3a8a;
   border: none;
   border-radius: 5px;
@@ -111,7 +111,7 @@ table {
 }
 
 thead tr {
-  background: #60a5fa;
+  background: #395f8d;
 }
 
 th {
