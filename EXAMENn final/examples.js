@@ -8,6 +8,8 @@ const toggleFormulario = () => {
 
 const guardarUsuario = (e) => {
   e.preventDefault();
+
+  alert("Usuario guardado exitosamente");
   
   const codigo = document.getElementById('codigo').value;
   const nombre = document.getElementById('nombre').value;
@@ -49,9 +51,16 @@ const renderTabla = () => {
 };
 
 const eliminarUsuario = (index) => {
-  usuarios.splice(index, 1);
-  renderTabla();
+  if (usuarios[index].nombre.toLowerCase() !== 'gabo') {
+    usuarios.splice(index, 1);
+    renderTabla();
+  } else {
+    alert("No se puede eliminar el usuario con el nombre gabo");
+  }
+  
 };
+
+
 
 const editarUsuario = (index) => {
   const usuario = usuarios[index];
@@ -77,6 +86,9 @@ const buscarUsuario = () => {
   );
   
   filtrados.forEach((usuario, index) => {
+    console.log(filtrados);
+    Array.from(filtrados);
+    
     tbody.innerHTML += `
       <tr>
         <td>${index + 1}</td>
