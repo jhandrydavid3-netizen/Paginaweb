@@ -1,97 +1,97 @@
 import { useState } from 'react'
-
-import { Box, Grid } from '@mui/material';
-
+import { Box, Grid, Link } from '@mui/material';
 import ButtonMui from '../components/ButtonMui.jsx';
 import InputMui from '../components/InputMui.jsx';
-import { Login } from '../utils/login.js';
-
 import PersonIcon from '@mui/icons-material/Person';
-import VisibilityIcon from '@mui/icons-material/Visibility';
-import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-
-import IconButton from '@mui/material/IconButton';
-
+import EmailIcon from '@mui/icons-material/Email';
+import PhoneIcon from '@mui/icons-material/Phone';
+import BadgeIcon from '@mui/icons-material/Badge';
 import { useNavigate } from 'react-router-dom';
 
-
-
-function LoginPage() {
-
+function RegisterPage() {
   const navigate = useNavigate();
-  const [user, setUser] = useState("");
+  const [name, setName] = useState("");
   const [password, setPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
 
-  const handlesendForm = () => {
-    const resLogin = Login(user, password);
-    console.log(resLogin);
-    if (resLogin) {
-      alert(`Bienvenido ${resLogin.name} ${resLogin.lastName}`);
-      navigate('/dashboard');
+  const handleRegister = () => {
+    if (name && email && password && phone) {
+      alert(`Usuario registrado: ${name}`);
+      navigate('/login');
     } else {
-      alert('Usuario o contraseña incorrectos');
+      alert('Por favor complete todos los campos');
     }
   };
 
-  const handleCount = () => {
-    alert(`Materia: ${asignature} - Créditos: ${credit}`);
-  };
-
   return (
-    <Box sx={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
-      <Grid container spacing={3} maxWidth={500} direction="column" justifyContent="center" alignItems="center" sx={{ width: '100%', paddingX: 10 }}>
-        
-        <Grid item xs={12} sx={{ textAlign: 'center', width: '500%' }}>
-          <h1>Iniciar Sesión</h1>
-        </Grid>
+    <Box sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', p: 4 }}>
+      <Box sx={{ width: '100%', maxWidth: 750 }}>
+        <h1 style={{ textAlign: 'center', fontSize: '2.5rem', marginBottom: '40px' }}>Registro de Usuario</h1>
 
-
-        <form onSubmit={(e) => { 
+        <form onSubmit={(e) => {
           e.preventDefault();
-          handlesendForm();
-        }} style={{ width: '100%' }}>
-          
-          <Grid container spacing={2} direction="column" alignItems="stretch" sx={{ width: '100%' }}>
-            
-            <Grid item xs={12}>
-              <InputMui 
-                startIcon={<PersonIcon />}
-                placeholder="User" 
-                value={user} 
-                onChange={(e) => setUser(e.target.value)} 
-                helperText="El mismo que el correo electronico"
-                label="Usuario"
-                fullWidth
-              />
-            </Grid>
-            
-            <Grid item xs={12}>
-              <InputMui
-                endIcon={<IconButton onClick={() => { setShowPassword(!showPassword); }} > 
-                {showPassword ? <VisibilityOffIcon /> : <VisibilityIcon />}</IconButton>}
-                placeholder="Password" 
-                value={password} 
-                onChange={(e) => setPassword(e.target.value)} 
-                helperText="La contraseña esta en su correo"
-                label="Contraseña"
-                type={showPassword ? "text" : "password"}
-                fullWidth
-              />
+          handleRegister();
+        }}>
+          <Grid container spacing={3}>
+            {/* Columna Izquierda */}
+            <Grid item xs={6}>
+              <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
+                <InputMui
+                  label="Nombre"
+                  placeholder="Nombre"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  fullWidth
+                />
+                <InputMui
+                  label="Contraseña"
+                  placeholder=""
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  type="password"
+                  fullWidth
+                />
+              </Box>
             </Grid>
 
-            <Grid item xs={12} sx={{ marginTop: 2 }}>
-              <ButtonMui 
-                name="Ingresar" 
-                backgroundColor="red"
-                onClick={handlesendForm}
-              />
+            {/* Columna Derecha */}
+            <Grid item xs={6}>
+              <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
+                <InputMui
+                  label="Correo Electrónico"
+                  placeholder="@gmail.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  type="email"
+                  fullWidth
+                />
+                <InputMui
+                  label="Teléfono"
+                  placeholder="0967662827"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  fullWidth
+                />
+              </Box>
             </Grid>
           </Grid>
+
+          {/* Acciones - Forzar debajo de la Grid */}
+          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mt: 6, gap: 2 }}>
+            <ButtonMui
+              name="REGISTRARSE"
+              backgroundColor="#d12828"
+              onClick={handleRegister}
+            />
+            <Link component="button" variant="body2" onClick={() => navigate('/login')} sx={{ textDecoration: 'none' }}>
+              ¿Ya tienes cuenta? Iniciar Sesión
+            </Link>
+          </Box>
         </form>
-      </Grid>
+      </Box>
     </Box>
   )
 }
 
-export default LoginPage;
+export default RegisterPage;

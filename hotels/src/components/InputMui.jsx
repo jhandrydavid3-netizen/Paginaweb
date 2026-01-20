@@ -1,17 +1,22 @@
 import TextField from '@mui/material/TextField';
+import InputAdornment from '@mui/material/InputAdornment';
 
 function InputMui({
   type,
   placeholder,
   value,
-  onChange = () => {},
+  onChange = () => { },
   required = false,
   helperText = "",
   error = false,
-  label = ""
+  label = "",
+  fullWidth = false,
+  startIcon = null,
+  endIcon = null
 }) {
   return (
     <TextField
+      fullWidth={fullWidth}
       size="small"
       type={type}
       value={value}
@@ -22,6 +27,18 @@ function InputMui({
       helperText={helperText}
       error={error}
       label={label}
+      InputProps={{
+        startAdornment: startIcon ? (
+          <InputAdornment position="start">
+            {startIcon}
+          </InputAdornment>
+        ) : null,
+        endAdornment: endIcon ? (
+          <InputAdornment position="end">
+            {endIcon}
+          </InputAdornment>
+        ) : null,
+      }}
     />
   );
 }

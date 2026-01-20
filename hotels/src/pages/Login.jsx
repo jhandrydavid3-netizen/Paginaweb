@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { Box, Grid } from '@mui/material';
+import { Box, Grid, Link } from '@mui/material';
 
 import ButtonMui from '../components/ButtonMui.jsx';
 import InputMui from '../components/InputMui.jsx';
@@ -39,57 +39,47 @@ function LoginPage() {
   };
 
   return (
-    <Box sx={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
-      <Grid container spacing={3} maxWidth={500} direction="column" justifyContent="center" alignItems="center" sx={{ width: '100%', paddingX: 10 }}>
-        
-        <Grid item xs={12} sx={{ textAlign: 'center', width: '500%' }}>
-          <h1>Iniciar Sesión</h1>
-        </Grid>
-
-
-        <form onSubmit={(e) => { 
+    <Box sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', p: 4 }}>
+      <Box sx={{ width: '100%', maxWidth: 400 }}>
+        <h1 style={{ textAlign: 'center', marginBottom: '30px' }}>Iniciar Sesión</h1>
+        <form onSubmit={(e) => {
           e.preventDefault();
           handlesendForm();
-        }} style={{ width: '100%' }}>
-          
-          <Grid container spacing={2} direction="column" alignItems="stretch" sx={{ width: '100%' }}>
-            
-            <Grid item xs={12}>
-              <InputMui 
-                startIcon={<PersonIcon />}
-                placeholder="User" 
-                value={user} 
-                onChange={(e) => setUser(e.target.value)} 
-                helperText="El mismo que el correo electronico"
-                label="Usuario"
-                fullWidth
-              />
-            </Grid>
-            
-            <Grid item xs={12}>
-              <InputMui
-                endIcon={<IconButton onClick={() => { setShowPassword(!showPassword); }} > 
-                {showPassword ? <VisibilityOffIcon /> : <VisibilityIcon />}</IconButton>}
-                placeholder="Password" 
-                value={password} 
-                onChange={(e) => setPassword(e.target.value)} 
-                helperText="La contraseña esta en su correo"
-                label="Contraseña"
-                type={showPassword ? "text" : "password"}
-                fullWidth
-              />
-            </Grid>
+        }}>
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+            <InputMui
+              placeholder="Usuario"
+              value={user}
+              onChange={(e) => setUser(e.target.value)}
+              label="Usuario"
+              fullWidth
+            />
 
-            <Grid item xs={12} sx={{ marginTop: 2 }}>
-              <ButtonMui 
-                name="Ingresar" 
-                backgroundColor="red"
-                onClick={handlesendForm}
-              />
-            </Grid>
-          </Grid>
+            <InputMui
+              endIcon={<IconButton onClick={() => { setShowPassword(!showPassword); }} size="small">
+                {showPassword ? <VisibilityOffIcon /> : <VisibilityIcon />}</IconButton>}
+              placeholder="Contraseña"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              label="Contraseña"
+              type={showPassword ? "text" : "password"}
+              fullWidth
+            />
+          </Box>
+
+          {/* Acciones - Perfectamente centradas */}
+          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mt: 4, gap: 2, width: '100%' }}>
+            <ButtonMui
+              name="Ingresar"
+              backgroundColor="#d12828"
+              onClick={handlesendForm}
+            />
+            <Link component="button" variant="body2" onClick={() => navigate('/register')} sx={{ textDecoration: 'none' }}>
+              ¿No tienes cuenta? Regístrate
+            </Link>
+          </Box>
         </form>
-      </Grid>
+      </Box>
     </Box>
   )
 }
