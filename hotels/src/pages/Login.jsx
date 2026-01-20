@@ -67,16 +67,18 @@ function LoginPage() {
             />
           </Box>
 
-          {/* Acciones - Perfectamente centradas */}
-          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mt: 4, gap: 2, width: '100%' }}>
+          {/* Acciones - Botones lado a lado como en la imagen */}
+          <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', mt: 4, gap: 2, width: '100%' }}>
             <ButtonMui
-              name="Ingresar"
-              backgroundColor="#d12828"
+              name="INGRESAR"
+              backgroundColor="#FF0000"
               onClick={handlesendForm}
             />
-            <Link component="button" variant="body2" onClick={() => navigate('/register')} sx={{ textDecoration: 'none' }}>
-              ¿No tienes cuenta? Regístrate
-            </Link>
+            <ButtonMui
+              name="REGISTRARSE"
+              backgroundColor="#0000FF"
+              onClick={() => navigate('/register')}
+            />
           </Box>
         </form>
       </Box>
