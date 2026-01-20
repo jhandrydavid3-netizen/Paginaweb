@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #4a90e2, #2563eb);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.search-container {
+  
+  text-align: center;
+  margin-bottom: 20px;
+  padding-top: 10px;
+  display:flex;
+}
+
+.search-container input {
+  padding: 10px 15px;
+  width: 350px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.search-container button {
+  margin-left: 10px;
+  padding: 10px 25px;
+  background: #fb2424;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.95);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+h1 {
+  color: #1e3a8a;
+  font-size: 24px;
+  letter-spacing: 2px;
+}
+
+.btn-agregar {
+  padding: 8px 20px;
+  background: #fbbf24;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form-container {
+  background: #f0f8ff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #93c5fd;
+}
+
+.form-container h2 {
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+form {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.btn-guardar {
+  padding: 10px;
+  background: #fbbf24;
+  color: #1e3a8a;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+thead tr {
+  background: #60a5fa;
+}
+
+th {
+  padding: 12px;
+  text-align: left;
+  color: white;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+tbody tr {
+  border-bottom: 1px solid #93c5fd;
+}
+
+tbody tr:nth-child(odd) {
+  background: #e0f2fe;
+}
+
+tbody tr:nth-child(even) {
+  background: #bae6fd;
+}
+
+td {
+  padding: 12px;
+}
+
+.btn-modificar, .btn-eliminar {
+  padding: 6px 15px;
+  background: #fbbf24;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-right: 8px;
+}
