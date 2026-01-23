@@ -1,89 +1,138 @@
 import { useState } from 'react'
 
-import { Box, Grid, Link } from '@mui/material';
+import { Box, Grid } from '@mui/material';
+
+
 
 import ButtonMui from '../components/ButtonMui.jsx';
 import InputMui from '../components/InputMui.jsx';
-import { Login } from '../utils/login.js';
 
 import PersonIcon from '@mui/icons-material/Person';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
+import { LoginService } from '../utils/login.js';
 import IconButton from '@mui/material/IconButton';
 
 import { useNavigate } from 'react-router-dom';
-
-
+import ModalMui from '../components/ModalMui.jsx';
 
 function LoginPage() {
 
-  const navigate = useNavigate();
-  const [user, setUser] = useState("");
-  const [password, setPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
+    const navigate = useNavigate();
+    const [user, setUser] = useState("");
+    const [password, setPassword] = useState("");
+    const [showPassword, setShowPassword] = useState(false);
 
-  const handlesendForm = () => {
-    const resLogin = Login(user, password);
-    console.log(resLogin);
-    if (resLogin) {
-      alert(`Bienvenido ${resLogin.name} ${resLogin.lastName}`);
-      navigate('/dashboard');
-    } else {
-      alert('Usuario o contraseña incorrectos');
+    const [stateModal, setStateModal] = useState(
+        {
+            open: false,
+            title: "Titulo Modal",
+            message: "",
+            status: "info",
+            showBtnL: false,
+
+        }
+    );
+
+    const handleCloseModal = () => {
+        setStateModal({ ...stateModal, open: false });
     }
-  };
 
-  const handleCount = () => {
-    alert(`Materia: ${asignature} - Créditos: ${credit}`);
-  };
 
-  return (
-    <Box sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', p: 4 }}>
-      <Box sx={{ width: '100%', maxWidth: 400 }}>
-        <h1 style={{ textAlign: 'center', marginBottom: '30px' }}>Iniciar Sesión</h1>
-        <form onSubmit={(e) => {
-          e.preventDefault();
-          handlesendForm();
-        }}>
-          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-            <InputMui
-              placeholder="Usuario"
-              value={user}
-              onChange={(e) => setUser(e.target.value)}
-              label="Usuario"
-              fullWidth
-            />
+    const handleSendForm = () => {
+        const resLogin = LoginService(user, password);
+        console.log("ok", resLogin);
+        if (resLogin == null) {
+            setStateModal({
+                ...stateModal,
+                open: true,
+                title: "Error",
+                message: "Credenciales incorrectas",
+                status: "error",
+                showBtnL: true,
 
-            <InputMui
-              endIcon={<IconButton onClick={() => { setShowPassword(!showPassword); }} size="small">
-                {showPassword ? <VisibilityOffIcon /> : <VisibilityIcon />}</IconButton>}
-              placeholder="Contraseña"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              label="Contraseña"
-              type={showPassword ? "text" : "password"}
-              fullWidth
-            />
-          </Box>
+            });
+            return;
+        } else {
+            navigate('/dashboard');
+        }
+    }
 
-          {/* Acciones - Botones lado a lado como en la imagen */}
-          <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', mt: 4, gap: 2, width: '100%' }}>
-            <ButtonMui
-              name="INGRESAR"
-              backgroundColor="#FF0000"
-              onClick={handlesendForm}
+    const handleRegister = () => {
+        navigate('/registro');
+
+    }
+
+    return (
+        <>
+            <ModalMui
+                open={stateModal.open}
+                title={stateModal.title}
+                message={stateModal.message}
+                status={stateModal.status}
+                handleClose={handleCloseModal}
+                showBtnL={stateModal.showBtnL}
+                actionBtnL={handleCloseModal}
+
             />
-            <ButtonMui
-              name="REGISTRARSE"
-              backgroundColor="#0000FF"
-              onClick={() => navigate('/register')}
-            />
-          </Box>
-        </form>
-      </Box>
-    </Box>
-  )
+            <Box sx={{ flexGrow: 1 }}>
+                <Grid container spacing={2} direction="column" alignItems="center" justifyContent="center">
+
+                    <Grid item xs={12}>
+                        <h2>Iniciar Sesion</h2>
+                    </Grid>
+
+                    <Grid item size={{ lg: 4, md: 4, sm: 6, xs: 10 }}>
+                        <form onSubmit={(e) => {
+                            e.preventDefault();
+                            handleSendForm();
+                        }}>
+                            <Grid container
+                                spacing={2}
+
+                                alignItems="center"
+                                justifyContent="center"
+                            >
+                                <Grid size={12}>
+                                    <InputMui
+                                        startIcon={<PersonIcon />}
+                                        placeholder="Usuario123"
+                                        label="Nombre de Usuario"
+                                        value={user}
+                                        onChange={(e) => { setUser(e.target.value) }}
+                                        required />
+                                </Grid>
+                                <Grid size={12}>
+                                    <InputMui
+                                        endIcon={
+                                            <IconButton onClick={() => { setShowPassword(!showPassword) }} size='small'>
+                                                {showPassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
+                                            </IconButton>
+                                        }
+                                        placeholder="password123"
+                                        label="Contraseña"
+                                        type={showPassword ? "text" : "password"}
+                                        helperText="La contraseña es privada"
+                                        value={password}
+                                        onChange={(e) => { setPassword(e.target.value) }}
+                                    />
+                                </Grid>
+                                <Grid size={6}>
+                                    <ButtonMui name={`Ingresar`} backgroundColor='red' />
+                                </Grid>
+                                <Grid size={6}>
+
+                                    <ButtonMui type='button' onClick={handleRegister} name={`Registrarse`} backgroundColor='blue' />
+                                </Grid>
+                            </Grid>
+                        </form>
+                    </Grid>
+                </Grid>
+
+            </Box>
+        </>
+    )
 }
 
-export default LoginPage;
+export default LoginPage

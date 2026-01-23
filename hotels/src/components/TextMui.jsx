@@ -1,8 +1,8 @@
-import { Typography } from "@mui/material";
+import { Typography } from '@mui/material';
 
 function TextMui({
-    value="Sample Text",
-    variant="h1",
+    value = "Sample Text",
+    variant = "h1"
 
 }) {
     return (
@@ -11,7 +11,7 @@ function TextMui({
                 {value}
             </Typography>
         </>
-    );
+    )
 }
 
-export default TextMui; 
+export default TextMui
