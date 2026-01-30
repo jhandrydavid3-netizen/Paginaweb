@@ -4,33 +4,35 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 
-import WarningIcon from '@mui/icons-material/WarningAmber';
+import WarningAmberIcon from '@mui/icons-material/WarningAmber';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import InfoOutlineIcon from '@mui/icons-material/InfoOutline';
 
-import ButtonMui from './ButtonMui';
-
-function ModalMui({
-    open = false,
-    handleClose = () => { },
-    title = "null",
-    message = "null",
-    status = "info",
-
-
-}) {
+function ModalMui(
+    {
+        open = false,
+        handleClose = () => { },
+        title = null,
+        message = null,
+        status = 'info'
+    }
+) {
     const handleGetIconByStatus = () => {
         switch (status) {
-            case "warning":
-                return <WarningIcon color="warning" sx={{ fontSize: 40 }} />;
-            case "error":
-                return <ErrorOutlineIcon color="error" sx={{ fontSize: 40 }} />;
-            case "success":
-                return <CheckCircleOutlineIcon color="success" sx={{ fontSize: 40 }} />;
+            case 'warning':
+                return <WarningAmberIcon color='warning' sx={{ fontSize: 40 }} />;
+            case 'error':
+                return <ErrorOutlineIcon color='error' sx={{ fontSize: 40 }} />;
+            case 'success':
+                return <CheckCircleOutlineIcon color='success' sx={{ fontSize: 40 }} />;
+            case 'info':
+                return <InfoOutlineIcon color='info' sx={{ fontSize: 40 }} />;
             default:
-                return <WarningIcon color="info" sx={{ fontSize: 40 }} />;
+                return <InfoOutlineIcon color='info' sx={{ fontSize: 40 }} />;
         }
     }
+
     return (
         <>
             <Dialog
@@ -50,23 +52,20 @@ function ModalMui({
                     }
                     {
                         message &&
-                        <DialogContent>
-                            <DialogContentText id="alert-dialog-description">
-                                {message}
-                            </DialogContentText>
-                        </DialogContent>
+                        <DialogContentText id="alert-dialog-description">
+                            {message}
+                        </DialogContentText>
                     }
                 </DialogContent>
 
 
 
                 <DialogActions>
-                    <ButtonMui name="Aceptar" />
-                    <ButtonMui name="Rechazar" backgroundColor="red" />
+                    aqui va boton
                 </DialogActions>
             </Dialog>
         </>
-    );
+    )
 }
 
-export default ModalMui;
+export default ModalMui

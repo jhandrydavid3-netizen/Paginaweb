@@ -1,9 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./styles/index.css";
-
 import RouterPages from "./routes/Router.jsx";
-import { ReactSession } from "react-client-session";
+import { ReactSession } from 'react-client-session';
 
 ReactSession.setStoreType("localStorage");
 
